@@ -23,6 +23,7 @@
     "dependencies": {
         "@actions/core": "1.1.1",
         "@actions/github": "1.1.0",
+        "@zeit/ncc": "0.20.5",
         "simple-git": "1.126.0"
     }
 }
