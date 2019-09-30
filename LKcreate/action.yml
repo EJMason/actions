@@ -1,7 +1,9 @@
 name: 'Create Leankit Card'
 description: 'Create a leankit card in triage for dependabot.'
 inputs:
-outputs:
+GH_TOKEN: # id of input
+    description: 'Access Token'
+    required: true
 runs:
     using: 'node12'
     main: 'dist/index.js'
