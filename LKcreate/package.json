@@ -4,7 +4,8 @@
     "description": "Github Action for creating a leankit card",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "ncc build index.js"
     },
     "repository": {
         "type": "git",
@@ -18,5 +19,10 @@
     "bugs": {
         "url": "https://github.com/EJMason/actions/issues"
     },
-    "homepage": "https://github.com/EJMason/actions#readme"
+    "homepage": "https://github.com/EJMason/actions#readme",
+    "dependencies": {
+        "@actions/core": "1.1.1",
+        "@actions/github": "1.1.0",
+        "simple-git": "1.126.0"
+    }
 }
