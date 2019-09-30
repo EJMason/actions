@@ -1,0 +1,10 @@
+name: 'Create Leankit Card'
+description: 'Create a leankit card in triage for dependabot.'
+inputs:
+outputs:
+    cardId: # id of output
+        description: 'The id of the created LK card'
+runs:
+    using: 'node12'
+    main: 'dist/index.js'
+# need to add some badge stuff

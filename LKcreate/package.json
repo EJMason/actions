@@ -1,0 +1,22 @@
+{
+    "name": "lkcreate",
+    "version": "1.0.0",
+    "description": "Github Action for creating a leankit card",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EJMason/actions.git"
+    },
+    "keywords": [
+        "actions"
+    ],
+    "author": "EJ Mason <eliotjunior@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EJMason/actions/issues"
+    },
+    "homepage": "https://github.com/EJMason/actions#readme"
+}
