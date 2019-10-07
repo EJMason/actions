@@ -4,11 +4,6 @@ const got = require('got')
 
 async function run() {
     try {
-        // This should be a token with access to your repository scoped in as a secret.
-        // The YML workflow will need to set myToken with the GitHub Secret Token
-        // myToken: ${{ secrets.GITHUB_TOKEN }
-        // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
-
         const myToken = core.getInput('token')
         const octokit = new github.GitHub(myToken)
 
@@ -26,12 +21,6 @@ async function run() {
         const lk_board = core.getInput('lkBoard') // triage lane id
         const lk_token = core.getInput('lkToken')
 
-        // const lk_card_type = core.getInput(LK_TYPE_DEV) // Card type - defect/risk
-        // const lane = core.getInput(LK_LANE_DEV) // triage lane id
-        // const lk_url = core.getInput(LK_URL_DEV) // triage lane id
-        // const lk_board = core.getInput(LK_BOARD_DEV) // triage lane id
-        // const lk_token = core.getInput(LK_TOKEN_DEV)
-
         const header = 'Dependabot'
         const title = pr.title.replace(':robot: ', '')
         const description = pr.body
@@ -40,7 +29,7 @@ async function run() {
 
         // create the card
 
-        const item = await got.post(`${lk_url}/card`, {
+        const response = await got.post(`${lk_url}/card`, {
             headers: {
                 Authorization: `Bearer ${lk_token}`,
             },
@@ -58,12 +47,11 @@ async function run() {
             },
             json: true,
         })
-        console.log('---------- REQUEST SUCCESS! -------------')
-        console.log()
-        console.log(item)
+        console.log(response.body)
+        console.log('====================')
+        console.log('id: ', response.body.id)
+        console.log('url: ', lk_url)
     } catch (error) {
-        console.log('-------------------err-------------------')
-        console.log(error)
         core.setFailed(`Action failed, ${error}`)
     }
 
