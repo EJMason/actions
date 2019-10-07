@@ -20,11 +20,11 @@ async function run() {
 
         const pr = pullRequest[0]
 
-        const card_type = core.getInput(lkType) // Card type - defect/risk
-        const lane = core.getInput(lkLane) // triage lane id
-        const lk_url = core.getInput(lkUrl) // triage lane id
-        const lk_board = core.getInput(lkBoard) // triage lane id
-        const lk_token = core.getInput(lkToken)
+        const card_type = core.getInput('lkType') // Card type - defect/risk
+        const lane = core.getInput('lkLane') // triage lane id
+        const lk_url = core.getInput('lkUrl') // triage lane id
+        const lk_board = core.getInput('lkBoard') // triage lane id
+        const lk_token = core.getInput('lkToken')
 
         // const lk_card_type = core.getInput(LK_TYPE_DEV) // Card type - defect/risk
         // const lane = core.getInput(LK_LANE_DEV) // triage lane id
