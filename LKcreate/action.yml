@@ -8,16 +8,16 @@ inputs:
         description: 'Card Type'
         required: true
     LK_LANE_DEV:
-        description: 'Card Type'
+        description: 'Lane of card'
         required: true
     LK_URL_DEV:
-        description: 'Card Type'
+        description: 'Which LK account'
         required: true
     LK_BOARD_DEV:
-        description: 'Card Type'
+        description: 'LK Board ID'
         required: true
     LK_TOKEN_DEV:
-        description: 'Card Type'
+        description: 'LK TOken'
         required: true
 runs:
     using: 'node12'

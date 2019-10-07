@@ -4,6 +4,7 @@
     "description": "Github Action for creating a leankit card",
     "main": "index.js",
     "scripts": {
+        "prebuild": "rimraf dist",
         "build": "ncc build index.js"
     },
     "repository": {
@@ -25,5 +26,8 @@
         "@zeit/ncc": "0.20.5",
         "got": "9.6.0",
         "simple-git": "1.126.0"
+    },
+    "devDependencies": {
+        "rimraf": "3.0.0"
     }
 }
