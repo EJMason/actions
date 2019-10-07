@@ -1274,27 +1274,28 @@ async function run() {
 
         // create the card
 
-        const item = await got(`${lk_url}/card`, {
-            headers: {
-                Authorization: `Bearer ${lk_token}`,
-            },
-            body: {
-                boardId: lk_board, // required
-                title: title, // required
-                typeId: lk_card_type,
-                laneId: lane,
-                description: description,
-                externalLink: {
-                    label: external_link_title,
-                    url: external_link,
-                },
-                customId: header,
-            },
-        })
-        console.log('---------- REQUEST SUCCESS! -------------')
-        console.log()
-        console.log(item)
+        // const item = await got(`${lk_url}/card`, {
+        //     headers: {
+        //         Authorization: `Bearer ${lk_token}`,
+        //     },
+        //     body: {
+        //         boardId: lk_board, // required
+        //         title: title, // required
+        //         typeId: lk_card_type,
+        //         laneId: lane,
+        //         description: description,
+        //         externalLink: {
+        //             label: external_link_title,
+        //             url: external_link,
+        //         },
+        //         customId: header,
+        //     },
+        // })
+        // console.log('---------- REQUEST SUCCESS! -------------')
+        // console.log()
+        // console.log(item)
     } catch (error) {
+        console.log('-------------------err-------------------')
         console.log(error)
         core.setFailed(`Action failed, ${error}`)
     }
