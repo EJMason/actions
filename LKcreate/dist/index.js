@@ -1239,10 +1239,12 @@ async function run() {
         // The YML workflow will need to set myToken with the GitHub Secret Token
         // myToken: ${{ secrets.GITHUB_TOKEN }
         // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
-        const apples = core.getInput('TEST')
+        const apples = core.getInput('test')
         console.log('here apples : ', apples)
-        const myToken = core.getInput('GITHUB_TOKEN')
+        const myToken = core.getInput('token')
         console.log(myToken.length)
+        console.log()
+        console.log(process.env)
         console.log()
 
         const octokit = new github.GitHub(myToken)
@@ -1264,11 +1266,11 @@ async function run() {
         // const lk_board = core.getInput(LK_BOARD) // triage lane id
         // const lk_token = core.getInput(LK_TOKEN)
 
-        const lk_card_type = core.getInput(LK_TYPE_DEV) // Card type - defect/risk
-        const lane = core.getInput(LK_LANE_DEV) // triage lane id
-        const lk_url = core.getInput(LK_URL_DEV) // triage lane id
-        const lk_board = core.getInput(LK_BOARD_DEV) // triage lane id
-        const lk_token = core.getInput(LK_TOKEN_DEV)
+        // const lk_card_type = core.getInput(LK_TYPE_DEV) // Card type - defect/risk
+        // const lane = core.getInput(LK_LANE_DEV) // triage lane id
+        // const lk_url = core.getInput(LK_URL_DEV) // triage lane id
+        // const lk_board = core.getInput(LK_BOARD_DEV) // triage lane id
+        // const lk_token = core.getInput(LK_TOKEN_DEV)
 
         const header = 'Dependabot'
         const title = pr.title.replace(':robot: ', '')
