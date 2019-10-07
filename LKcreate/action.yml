@@ -1,6 +1,12 @@
 name: 'Create Leankit Card'
 description: 'Create a leankit card in triage for dependabot.'
 inputs:
+    TEST: # id of input
+        description: 'Access Token'
+        required: true
+    GITHUB_TOKEN: # id of input
+        description: 'Access Token'
+        required: true
     GH_TOKEN: # id of input
         description: 'Access Token'
         required: true
