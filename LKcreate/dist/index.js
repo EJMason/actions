@@ -1233,6 +1233,8 @@ const core = __webpack_require__(470)
 const github = __webpack_require__(469)
 const got = __webpack_require__(798)
 
+const prefix = 'https://spacecat.leankit.com/card/'
+
 async function run() {
     try {
         const myToken = core.getInput('token')
@@ -1278,10 +1280,8 @@ async function run() {
             },
             json: true,
         })
-        console.log(response.body)
-        console.log('====================')
-        console.log('id: ', response.body.id)
-        console.log('url: ', lk_url)
+        console.log('Card Created ---> ')
+        console.log(`${prefix}${response.body.id}`)
     } catch (error) {
         core.setFailed(`Action failed, ${error}`)
     }
@@ -1291,18 +1291,6 @@ async function run() {
 }
 
 run()
-
-// card format
-/*
-
-Header                  Dependabot
-Card Type               Defect / Risk
-Title                   PR Title, less emoji
-Description             PR Body, less commands?
-External Link           PR, name: Pull Request
-Lane                    Triage
-
-*/
 
 
 /***/ }),
