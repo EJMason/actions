@@ -3,7 +3,7 @@ description: 'Create a leankit card in triage for dependabot.'
 inputs:
   test: # id of input
     description: 'Access Token'
-    default: 'apples'
+    default: 'default apples'
   token: # id of input
     description: 'Access Token'
   # GH_TOKEN: # id of input
