@@ -12,7 +12,7 @@ inputs:
   lkBoard:
     description: 'LK Board ID'
   lkToken:
-    description: 'LK TOken'
+    description: 'LK Token'
 runs:
   using: 'node12'
   main: 'dist/index.js'

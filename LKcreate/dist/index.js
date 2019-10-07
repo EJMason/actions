@@ -1278,7 +1278,7 @@ async function run() {
             body: {
                 boardId: lk_board, // required
                 title: title, // required
-                typeId: lk_card_type,
+                typeId: card_type,
                 laneId: lane,
                 description: description,
                 externalLink: {
