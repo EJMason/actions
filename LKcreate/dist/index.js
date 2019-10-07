@@ -1306,6 +1306,7 @@ async function run() {
 run().catch((err) => {
     console.log('-------------------err-------------------')
     console.log(err)
+    process.exit(1)
 })
 
 // card format
