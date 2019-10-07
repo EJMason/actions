@@ -1,31 +1,31 @@
 name: 'Create Leankit Card'
 description: 'Create a leankit card in triage for dependabot.'
 inputs:
-    TEST: # id of input
-        description: 'Access Token'
-        required: true
-    GITHUB_TOKEN: # id of input
-        description: 'Access Token'
-        required: true
-    GH_TOKEN: # id of input
-        description: 'Access Token'
-        required: true
-    LK_TYPE_DEV:
-        description: 'Card Type'
-        required: true
-    LK_LANE_DEV:
-        description: 'Lane of card'
-        required: true
-    LK_URL_DEV:
-        description: 'Which LK account'
-        required: true
-    LK_BOARD_DEV:
-        description: 'LK Board ID'
-        required: true
-    LK_TOKEN_DEV:
-        description: 'LK TOken'
-        required: true
+  TEST: # id of input
+    description: 'Access Token'
+    required: true
+  GITHUB_TOKEN: # id of input
+    description: 'Access Token'
+    required: true
+  GH_TOKEN: # id of input
+    description: 'Access Token'
+    required: true
+  LK_TYPE_DEV:
+    description: 'Card Type'
+    required: true
+  LK_LANE_DEV:
+    description: 'Lane of card'
+    required: true
+  LK_URL_DEV:
+    description: 'Which LK account'
+    required: true
+  LK_BOARD_DEV:
+    description: 'LK Board ID'
+    required: true
+  LK_TOKEN_DEV:
+    description: 'LK TOken'
+    required: true
 runs:
-    using: 'node12'
-    main: 'dist/index.js'
+  using: 'node12'
+  main: 'dist/index.js'
 # need to add some badge stuff
