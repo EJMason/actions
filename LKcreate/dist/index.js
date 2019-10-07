@@ -1240,6 +1240,8 @@ async function run() {
         // myToken: ${{ secrets.GITHUB_TOKEN }
         // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
         const myToken = core.getInput('GITHUB_TOKEN')
+        console.log(myToken.length)
+        console.log()
 
         const octokit = new github.GitHub(myToken)
 
