@@ -17,3 +17,6 @@ runs:
   using: 'node12'
   main: 'dist/index.js'
 # need to add some badge stuff
+branding:
+  icon: 'sun'
+  color: purple
