@@ -56,6 +56,7 @@ async function run() {
                 },
                 customId: header,
             },
+            json: true,
         })
         console.log('---------- REQUEST SUCCESS! -------------')
         console.log()
