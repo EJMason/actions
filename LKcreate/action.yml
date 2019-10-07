@@ -1,22 +1,23 @@
 name: 'Create Leankit Card'
 description: 'Create a leankit card in triage for dependabot.'
 inputs:
-  TEST: # id of input
+  test: # id of input
     description: 'Access Token'
-  GITHUB_TOKEN: # id of input
+    default: 'apples'
+  token: # id of input
     description: 'Access Token'
-  GH_TOKEN: # id of input
-    description: 'Access Token'
-  LK_TYPE_DEV:
-    description: 'Card Type'
-  LK_LANE_DEV:
-    description: 'Lane of card'
-  LK_URL_DEV:
-    description: 'Which LK account'
-  LK_BOARD_DEV:
-    description: 'LK Board ID'
-  LK_TOKEN_DEV:
-    description: 'LK TOken'
+  # GH_TOKEN: # id of input
+  #   description: 'Access Token'
+  # LK_TYPE_DEV:
+  #   description: 'Card Type'
+  # LK_LANE_DEV:
+  #   description: 'Lane of card'
+  # LK_URL_DEV:
+  #   description: 'Which LK account'
+  # LK_BOARD_DEV:
+  #   description: 'LK Board ID'
+  # LK_TOKEN_DEV:
+  #   description: 'LK TOken'
 runs:
   using: 'node12'
   main: 'dist/index.js'
