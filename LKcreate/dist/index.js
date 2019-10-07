@@ -1241,7 +1241,8 @@ async function run() {
         // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
         const apples = core.getInput('APPLES')
         console.log(apples)
-        const myToken = core.getInput('GITHUB_TOKEN')
+        // const myToken = core.getInput('GITHUB_TOKEN')
+        const myToken = process.env.GITHUB_TOKEN
         console.log(myToken.length)
         console.log()
 
