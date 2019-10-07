@@ -1239,13 +1239,8 @@ async function run() {
         // The YML workflow will need to set myToken with the GitHub Secret Token
         // myToken: ${{ secrets.GITHUB_TOKEN }
         // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
-        const apples = core.getInput('test')
-        console.log('here apples : ', apples)
-        const myToken = core.getInput('token')
-        console.log(myToken.length)
-        console.log()
-        console.log('here --> ', process.env.GITHUB_ACTION)
 
+        const myToken = core.getInput('token')
         const octokit = new github.GitHub(myToken)
 
         const { data: pullRequest } = await octokit.pulls.list({
@@ -1254,16 +1249,13 @@ async function run() {
             state: 'open',
         })
 
-        console.log(pullRequest)
-        console.log()
-
         const pr = pullRequest[0]
 
-        // const card_type = core.getInput(LK_TYPE) // Card type - defect/risk
-        // const lane = core.getInput(LK_LANE) // triage lane id
-        // const lk_url = core.getInput(LK_URL) // triage lane id
-        // const lk_board = core.getInput(LK_BOARD) // triage lane id
-        // const lk_token = core.getInput(LK_TOKEN)
+        const card_type = core.getInput(lkType) // Card type - defect/risk
+        const lane = core.getInput(lkLane) // triage lane id
+        const lk_url = core.getInput(lkUrl) // triage lane id
+        const lk_board = core.getInput(lkBoard) // triage lane id
+        const lk_token = core.getInput(lkToken)
 
         // const lk_card_type = core.getInput(LK_TYPE_DEV) // Card type - defect/risk
         // const lane = core.getInput(LK_LANE_DEV) // triage lane id
@@ -1279,26 +1271,26 @@ async function run() {
 
         // create the card
 
-        // const item = await got(`${lk_url}/card`, {
-        //     headers: {
-        //         Authorization: `Bearer ${lk_token}`,
-        //     },
-        //     body: {
-        //         boardId: lk_board, // required
-        //         title: title, // required
-        //         typeId: lk_card_type,
-        //         laneId: lane,
-        //         description: description,
-        //         externalLink: {
-        //             label: external_link_title,
-        //             url: external_link,
-        //         },
-        //         customId: header,
-        //     },
-        // })
-        // console.log('---------- REQUEST SUCCESS! -------------')
-        // console.log()
-        // console.log(item)
+        const item = await got(`${lk_url}/card`, {
+            headers: {
+                Authorization: `Bearer ${lk_token}`,
+            },
+            body: {
+                boardId: lk_board, // required
+                title: title, // required
+                typeId: lk_card_type,
+                laneId: lane,
+                description: description,
+                externalLink: {
+                    label: external_link_title,
+                    url: external_link,
+                },
+                customId: header,
+            },
+        })
+        console.log('---------- REQUEST SUCCESS! -------------')
+        console.log()
+        console.log(item)
     } catch (error) {
         console.log('-------------------err-------------------')
         console.log(error)
