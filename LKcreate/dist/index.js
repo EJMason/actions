@@ -1271,7 +1271,7 @@ async function run() {
 
         // create the card
 
-        const item = await got(`${lk_url}/card`, {
+        const item = await got.post(`${lk_url}/card`, {
             headers: {
                 Authorization: `Bearer ${lk_token}`,
             },
