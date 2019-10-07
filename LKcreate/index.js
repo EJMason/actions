@@ -13,6 +13,7 @@ async function run() {
         const myToken = core.getInput('token')
         console.log(myToken.length)
         console.log()
+        console.log('here --> ', process.env.GITHUB_ACTION)
 
         const octokit = new github.GitHub(myToken)
 
