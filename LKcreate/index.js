@@ -72,7 +72,10 @@ async function run() {
     // core.setOutput()
 }
 
-run()
+run().catch((err) => {
+    console.log('-------------------err-------------------')
+    console.log(err)
+})
 
 // card format
 /*
