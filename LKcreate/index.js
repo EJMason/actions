@@ -8,10 +8,9 @@ async function run() {
         // The YML workflow will need to set myToken with the GitHub Secret Token
         // myToken: ${{ secrets.GITHUB_TOKEN }
         // https://help.github.com/en/articles/virtual-environments-for-github-actions#github_token-secret
-        const apples = core.getInput('APPLES')
-        console.log(apples)
-        // const myToken = core.getInput('GITHUB_TOKEN')
-        const myToken = process.env.GITHUB_TOKEN
+        const apples = core.getInput('TEST')
+        console.log('here apples : ', apples)
+        const myToken = core.getInput('GITHUB_TOKEN')
         console.log(myToken.length)
         console.log()
 
