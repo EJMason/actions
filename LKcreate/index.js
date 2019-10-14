@@ -26,7 +26,7 @@ async function run() {
         })
 
         console.log('=========== commits ==============')
-        console.log(commits[0])
+        console.log(commits)
 
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
