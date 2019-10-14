@@ -1247,6 +1247,8 @@ async function run() {
         })
 
         const pr = pullRequest[0]
+        console.log('================ PR ========================')
+        console.log(pr)
 
         const commits = await octokit.pulls.listCommits({
             owner: 'EJMason',
