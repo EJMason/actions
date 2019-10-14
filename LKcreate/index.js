@@ -36,8 +36,8 @@ async function run() {
             pull_number: pr.number,
         })
 
-        // console.log('=========== commits ==============')
-        // console.log(commits.data[0].commit)
+        console.log('=========== commits ==============')
+        console.log(commits.data[0].commit)
 
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
@@ -72,8 +72,9 @@ async function run() {
             json: true,
         })
 
-        const newCommit = commits[0].commit.message + `\n\n${prefix}${response.body.id}`
-
+        const newCommit = commits.data[0].commit.message + `\n\n${prefix}${response.body.id}`
+        console.log('-------------------------------------')
+        console.log(newCommit)
         await git()
             .checkout(branch)
             .commit(newCommit, { '--amend': null })
