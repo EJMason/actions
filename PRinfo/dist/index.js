@@ -555,7 +555,9 @@ async function run() {
         const description = pr.body
         const external_link = pr.html_url
         const title = pr.title.replace(':robot: ', '')
+        const pr_number = pr.number
 
+        core.debug(`    PR Number: ${pr_number}`)
         core.debug(`  Branch Name: ${branch}`)
         core.debug(`External Link: ${external_link}`)
         core.debug(`        Title: ${title}`)
@@ -564,6 +566,7 @@ async function run() {
         core.setOutput('pr_title', title)
         core.setOutput('pr_decription', description)
         core.setOutput('pr_external_link', external_link)
+        core.setOutput('pr_number', pr_number)
     } catch (error) {
         core.setFailed(`Action failed, ${error}`)
     }
