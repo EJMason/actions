@@ -15,7 +15,9 @@ async function run() {
             state: 'open',
         })
 
-        const pr = pullRequest[0]
+        const pr = pullRequest[1]
+
+        console.log(pr)
 
         const commits = await octokit.pulls.listCommits({
             owner: 'EJMason',
