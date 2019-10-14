@@ -17,6 +17,15 @@ async function run() {
 
         const pr = pullRequest[0]
 
+        const commits = await octokit.pulls.listCommits({
+            owner: 'EJMason',
+            repo: 'test-dependabot',
+            pull_number: pr.number,
+        })
+
+        console.log('=========== commits ==============')
+        console.log(commits[0])
+
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
         const lk_url = core.getInput('lkUrl') // triage lane id
@@ -51,12 +60,12 @@ async function run() {
         })
         console.log('Card Created ---> ')
         console.log(`${prefix}${response.body.id}`)
+
+        core.setOutput('lk_url', `${prefix}${response.body.id}`)
+        core.setOutput('commit_message', commits[0].commit.message)
     } catch (error) {
         core.setFailed(`Action failed, ${error}`)
     }
-
-    // Next task is to ammend the commit, Need the lk link, info about the commit
-    // core.setOutput()
 }
 
 run()
