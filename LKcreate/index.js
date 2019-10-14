@@ -16,8 +16,6 @@ async function run() {
         })
 
         const pr = pullRequest[0]
-        console.log('================ PR ========================')
-        console.log(pr)
 
         const commits = await octokit.pulls.listCommits({
             owner: 'EJMason',
@@ -26,7 +24,7 @@ async function run() {
         })
 
         console.log('=========== commits ==============')
-        console.log(commits)
+        console.log(commits.data[0].commit)
 
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
