@@ -15,18 +15,18 @@ async function run() {
             state: 'open',
         })
 
-        const pr = pullRequest[1]
+        const goodPrs = pullRequest.filter((pri) => pri.labels.filter((label) => label.name === 'dependabot').length > 0)
 
-        console.log(pr)
+        console.log(goodPrs)
 
-        const commits = await octokit.pulls.listCommits({
-            owner: 'EJMason',
-            repo: 'test-dependabot',
-            pull_number: pr.number,
-        })
+        // const commits = await octokit.pulls.listCommits({
+        //     owner: 'EJMason',
+        //     repo: 'test-dependabot',
+        //     pull_number: pr.number,
+        // })
 
-        console.log('=========== commits ==============')
-        console.log(commits.data[0].commit)
+        // console.log('=========== commits ==============')
+        // console.log(commits.data[0].commit)
 
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
