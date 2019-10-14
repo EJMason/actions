@@ -17,6 +17,8 @@ outputs:
     description: 'PR Description'
   pr_external_link:
     description: 'PR Link'
+  pr_number:
+    description: 'PR Number'
 
 runs:
   using: 'node12'
