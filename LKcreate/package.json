@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "prebuild": "rimraf dist",
-        "build": "ncc build index.js"
+        "build": "ncc build index.js",
+        "postbuild": "git add --all && git commit -m 'dev' && git push"
     },
     "repository": {
         "type": "git",

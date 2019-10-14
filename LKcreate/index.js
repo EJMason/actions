@@ -17,16 +17,24 @@ async function run() {
 
         const goodPrs = pullRequest.filter((pri) => pri.labels.filter((label) => label.name === 'dependabot').length > 0)
 
-        console.log(goodPrs)
+        if (!goodPrs) {
+            core.setFailed(`There are no PRs that need to be triaged!`)
+        }
 
-        // const commits = await octokit.pulls.listCommits({
-        //     owner: 'EJMason',
-        //     repo: 'test-dependabot',
-        //     pull_number: pr.number,
-        // })
+        if (goodPrs.length > 1) {
+            core.setFailed('Too many good Pull Requests!')
+        }
 
-        // console.log('=========== commits ==============')
-        // console.log(commits.data[0].commit)
+        const pr = goodPrs[0]
+
+        const commits = await octokit.pulls.listCommits({
+            owner: 'EJMason',
+            repo: 'test-dependabot',
+            pull_number: pr.number,
+        })
+
+        console.log('=========== commits ==============')
+        console.log(commits.data[0].commit)
 
         const card_type = core.getInput('lkType') // Card type - defect/risk
         const lane = core.getInput('lkLane') // triage lane id
