@@ -1,0 +1,27 @@
+name: 'Get PR Info'
+description: 'Get PR Info for Leankit Card.'
+inputs:
+  token: # id of input
+    description: 'Access Token'
+  owner:
+    description: 'Repo Owner'
+  repo:
+    description: 'Repo Name'
+
+outputs:
+  branch_name:
+    description: 'Name of branch'
+  pr_title:
+    description: 'PR Title'
+  pr_description:
+    description: 'PR Description'
+  pr_external_link:
+    description: 'PR Link'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+# need to add some badge stuff
+branding:
+  icon: 'sun'
+  color: purple

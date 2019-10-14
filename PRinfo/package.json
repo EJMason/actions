@@ -1,7 +1,7 @@
 {
-    "name": "lkcreate",
+    "name": "prinfo",
     "version": "1.0.0",
-    "description": "Github Action for creating a leankit card",
+    "description": "Github Action for getting PR info",
     "main": "index.js",
     "scripts": {
         "prebuild": "rimraf dist",
@@ -24,7 +24,9 @@
     "dependencies": {
         "@actions/core": "1.1.1",
         "@actions/github": "1.1.0",
-        "@zeit/ncc": "0.20.5"
+        "@zeit/ncc": "0.20.5",
+        "got": "9.6.0",
+        "simple-git": "1.126.0"
     },
     "devDependencies": {
         "rimraf": "3.0.0"
