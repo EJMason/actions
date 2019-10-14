@@ -74,7 +74,7 @@ async function run() {
 
         const newCommit = commits[0].commit.message + `\n\n${prefix}${response.body.id}`
 
-        git()
+        await git()
             .checkout(branch)
             .commit(newCommit, { '--amend': null })
             .push('origin', branch, { '--force': null })
