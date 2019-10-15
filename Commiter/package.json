@@ -1,0 +1,32 @@
+{
+    "name": "commiter",
+    "version": "1.0.0",
+    "description": "Github Action for ammending commit",
+    "main": "index.js",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "ncc build index.js",
+        "postbuild": "git add --all && git commit -m 'dev' && git push"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EJMason/actions.git"
+    },
+    "keywords": [
+        "actions"
+    ],
+    "author": "EJ Mason <eliotjunior@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EJMason/actions/issues"
+    },
+    "homepage": "https://github.com/EJMason/actions#readme",
+    "dependencies": {
+        "@actions/core": "1.1.1",
+        "@actions/github": "1.1.0",
+        "@zeit/ncc": "0.20.5"
+    },
+    "devDependencies": {
+        "rimraf": "3.0.0"
+    }
+}
