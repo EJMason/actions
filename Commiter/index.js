@@ -16,7 +16,7 @@ async function run() {
             pull_number: pr_number,
         })
 
-        console.log(commits)
+        console.log(commits.data)
     } catch (error) {
         core.setFailed(`Action failed, ${error}`)
     }
