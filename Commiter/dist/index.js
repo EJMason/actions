@@ -529,13 +529,14 @@ async function run() {
         const myToken = core.getInput('token')
         const owner = core.getInput('owner')
         const repo = core.getInput('repo')
+        const pr_number = core.getInput('pr_number')
 
         const octokit = new github.GitHub(myToken)
 
         const commits = await octokit.pulls.listCommits({
             owner,
             repo,
-            pull_number: pr.number,
+            pull_number: pr_number,
         })
 
         console.log(commits)
